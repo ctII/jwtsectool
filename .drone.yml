@@ -21,22 +21,7 @@ steps:
     commands:
       - go build .
       - go vet -race -v ./...
-  - name: test short
-    image: golang:1.18
-    commands:
-      - go test -v ./... -short
----
-kind: pipeline
-type: docker
-name: build
-
-trigger:
-  event:
-    - push
-    - tag
-
-steps:
-  - name: test long
+  - name: test
     image: golang:1.18
     commands:
       - go test -v ./...

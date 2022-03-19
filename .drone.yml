@@ -1,3 +1,4 @@
+---
 kind: pipeline
 type: docker
 name: build
@@ -25,3 +26,8 @@ steps:
     image: golang:1.18
     commands:
       - go test -v ./...
+---
+kind: signature
+hmac: c72a64c09c2eb9e557b0d278b8b2017989a4ca8f4fb54ef289d5380d74cef9c4
+
+...
